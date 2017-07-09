@@ -1,0 +1,42 @@
+sudo: required
+
+
+services:
+  - docker
+
+language: java
+jdk: oraclejdk8
+
+env:
+  global:
+    #- secure: "ZFLw9NRjasn8UqzqyjKEQ7jXadSDxxSa1qIVa+OhkMhQtyB63YWnjb9d4LShKVh3J9pBE2wPdZDpH9prClMUcDJeZFVKehQ6pl3DsHOou5him4vXknnZSoEYrh+vFFgGRLJ2+YF7rkroWBDFMDcHvJLfDqG1vAq/tUYgEyZC8FeDXx+dM3CfdDiODooXe8PRDdKXrb29e7SKMg4PKEJTLOGuAaoPFTINVW6qRljAS+p4+bdldZGmomiq23VWGZmccArWDY/SaZ8BwAF5air4TzYKMXcrP7b2yLVDSyg8wRuMfpa0Fcsn/yAcMx02cQwsmPwn8tdYx20LCEvAfacnK8rnyHXQ7yHkZHLIaiuMll4BaUpaI/xI4rQtwDwW3ndFzFln1vFEVhtIJFmQLEdMgVoubSXlWMSXWEROMPCmqQh9gj9cz4vLxi3ilLNijWP2xGXQTVwJ3KyJcZ2DBOIceb+gaGXAS+5e9l4mDkMoQMrMsdzk6jZ1HEOw3bMOIJoGD/DTykElw+jW8he790b/PjZbyPDALH28kS0i20BkI7JYIRgWGO+tQ41y54Mzgbd9f/MUC8eH8k71AwfjFsyZPC/sjvLNguplJOCzsYNFEoelCSEDKVE94o9iJ6AE7TUX5mFhKxAqP8pImsQ9dLhTMwkz1fpdqNGYPVyeCiCb2vA=" # DOCKER_EMAIL
+    - secure: "SImUwUpyWpdlzomOWkrrDON9NITkkemr1FT7loLYCCqmKdcuyZz6WjwCb/i7J2uTpDmrhJg+6EknCJINDhkEzhIUBik2Pqv8NWP3yQR0SYFXHauQxOJc1oorIpq4oUQBxVlp8xOsWiPt9ghAOdHfdixhlrsSnw0gGzu+xur+SlXsGFuulYgtYU5qUzBa6eXYfi/NOSJbL8eJd1T/haMsOhSIBhB6gDpnTnDxddBmgNXKnousY0l8DLKwIc7+QImenvMKxZHlM4dIHNQBiZsiixQMDVczomarzms0K6QgYgjZkFgTKW0Om3udsQPDxyr1sqBozp9LphwBVTPWPg9EU3YnB8HKPooyENOW9RaaWMxmPC5N+dN7DzIV0xJL4VtWFe1JcZ9WKhY8LobFPsoyKO08mPUgSBxdlRkukazq2EDP+3axb3PEEIx1Vh64KkYa2uqa+nf/feMpe2Gcq0jreUIgxZoLq1sP+XupINDMDXMLMqM8zFRrP5ZvA54PSkYWHC1XqELluU+GmlSPIeMxU9dkxpbrd3DfazlEnK/LA49BHxk0wThuwgn5tofsl0kn50WU1+c7advJDOYnMb1IMq66Em23kvZWMvhIC4RqaYBry57yo63ET5ScwC6ZdzIYpki9YViOgpvIBqD5IxD6gcl/9VD2ArbFkbIWLBi1jkw=" # DOCKER_USER
+    - secure: "dLCKB+lB0kXAnWHZSZg4W5aeomiH7HNdlnKJ3+4sdun+Cb5sGhkND/LAXqczwQRsfy80fftBGsiky+aQomP1t39tPymjfetxib/bsm8Pi5Ahdvrur2EYODU6rQhBcGSWanqyLaWI3cwHH37ZxzPll4Mt8SNh2wstV2jv1ysiYqjGYCb6ef6p+ckeAFRGc7gQKW/sZxGJYnMN6p8iEmubNOT9xaQvsXmgK8jeter1+ESqQJzWPs5r5SS80PBfmng0B0SqT0yYZur/nrl/d+u2MSgPBHjPxMWm9SJI8dmU8R8RVEJrdKgfU2DPKEEmqLSbKGgKucJr7wX1S7eh4XJl/b7GWKpN7lIVXszmmSHIRO5oLFuiAX6Epw6mYCNSfjhahw9GA1XVS1C7sYqx/laaVLC8mebm/8CtzY8yWhADNidQMuSGELqiS5+1S86uHGtrn4x/zFAx89GFg7/K4qW2O6FlTe+NGfo/ID9BgHGCygmIRkKby7Ev6NS9R5siZft7T0etKMm0FVVzQ9hkYj2QIFFvvoIhg2C0RzqAkjLkHxIu0BVzwX73msqpdqrGJCQCyqvxxOqXR+OjoTkAM+RLfLdOIgMREpW3/FPSlWtwasw+ZTHebi3rE/attGKJsX5xmb+0tDi79lqD/jJxmupi+B4x0EsJABVLICDHj+0kptU=" # DOCKER_PASS
+    - COMMIT=${TRAVIS_COMMIT::8}
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  - docker login -u="$DOCKER_USER" -p="$DOCKER_PASSWORD"
+
+    #TAG
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+
+
+  # CONFIG SERVICE
+  - export CONFIG=sergiojf/nuntius-config
+  - docker build -t $CONFIG:$COMMIT ./config-server
+  - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
+  - docker push $CONFIG
+
+    # MONGO DB
+  - export MONGO_DB=sergiojf/nuntius-mongodb
+  - docker build -t $MONGO_DB:$COMMIT ./mongodb
+  - docker tag $MONGO_DB:$COMMIT $MONGO_DB:$TAG
+  - docker push $MONGO_DB
+
+  # AUTH SERVICE
+  - export AUTH_SERVICE=sergiojf/nuntius-auth-service
+  - docker build -t $AUTH_SERVICE:$COMMIT ./auth-service
+  - docker tag $AUTH_SERVICE:$COMMIT $AUTH_SERVICE:$TAG
+  - docker push $AUTH_SERVICE
+

@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      database: nuntius
+      port: 0

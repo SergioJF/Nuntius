@@ -1,4 +1,4 @@
-package com.nuntius.accountservice;
+package com.nuntius.account;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

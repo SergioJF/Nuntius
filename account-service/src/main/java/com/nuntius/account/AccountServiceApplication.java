@@ -1,4 +1,4 @@
-package com.nuntius.accountservice;
+package com.nuntius.account;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

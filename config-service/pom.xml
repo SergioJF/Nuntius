@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>config-service</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Servidor de configuracion centralizado</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -55,6 +55,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<finalName>config-server</finalName>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
