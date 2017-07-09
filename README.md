@@ -14,15 +14,15 @@
 
 Para exportar las variables de entorno con las contraseñas, necesarias para el servidor de configuración, creamos dentro del directoria /env el script setup.sh.
 
-´´´
+```
 export CONFIG_SERVICE_PASSWORD=admin
-´´´
+```
 
 Necesitaremos ejecutarlo antes de lanzar el docker-compose
 
-´´´
-$ . ./setup.sh
-´´´
+```
+$ . ./setups.sh
+``
 
 ## Travis CI 
 
