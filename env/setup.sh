@@ -1,0 +1,1 @@
+export CONFIG_SERVICE_PASSWORD=admin
