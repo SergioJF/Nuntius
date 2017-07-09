@@ -22,7 +22,7 @@ Necesitaremos ejecutarlo antes de lanzar el docker-compose
 
 ```
 $ . ./setups.sh
-``
+```
 
 ## Travis CI 
 
