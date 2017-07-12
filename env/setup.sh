@@ -1,2 +1,3 @@
 export CONFIG_SERVICE_PASSWORD=admin
 export ACCOUNT_SERVICE_PASSWORD=admin
+export MONGODB_PASSWORD=admin
