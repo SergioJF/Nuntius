@@ -24,7 +24,7 @@ after_success:
 
   # CONFIG SERVICE
   - export CONFIG=sergiojf/nuntius-config
-  - docker build -t $CONFIG:$COMMIT ./config-server
+  - docker build -t $CONFIG:$COMMIT ./config-service
   - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
   - docker push $CONFIG
 
