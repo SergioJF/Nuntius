@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: eureka-service
+  cloud:
+    config:
+      uri: http://config:8888
+      fail-fast: true
+      password: ${CONIG_SERVICE_PASSWORD}
+      username: user
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
