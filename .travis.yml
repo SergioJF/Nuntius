@@ -47,3 +47,9 @@ after_success:
   - docker build -t $ACCOUNT_SERVICE:$COMMIT ./account-service
   - docker tag $ACCOUNT_SERVICE:$COMMIT $ACCOUNT_SERVICE:$TAG
   - docker push $ACCOUNT_SERVICE
+
+ # EUREKA SERVICE
+  - export EUREKA_SERVICE=sergiojf/nuntius-eureka-service
+  - docker build -t $EUREKA_SERVICE:$COMMIT ./eureka-service
+  - docker tag $EUREKA_SERVICE:$COMMIT $EUREKA_SERVICE:$TAG
+  - docker push $EUREKA_SERVICE
