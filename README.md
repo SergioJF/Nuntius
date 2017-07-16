@@ -1,6 +1,13 @@
 
+
+
+
+
+
+
 [![Build Status](https://travis-ci.org/SergioJF/Nuntius.svg?branch=master)](https://travis-ci.org/SergioJF/Nuntius)
-[![codecov](https://codecov.io/gh/SergioJF/TFG/branch/master/graph/badge.svg)](https://codecov.io/gh/SergioJF/TFG)
+[![codecov](https://codecov.io/gh/SergioJF/Nuntius/branch/master/graph/badge.svg)](https://codecov.io/gh/SergioJF/Nuntius)
+
 
 # TFG - NUNTIUS
 
