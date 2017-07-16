@@ -14,6 +14,8 @@ env:
     - secure: "dLCKB+lB0kXAnWHZSZg4W5aeomiH7HNdlnKJ3+4sdun+Cb5sGhkND/LAXqczwQRsfy80fftBGsiky+aQomP1t39tPymjfetxib/bsm8Pi5Ahdvrur2EYODU6rQhBcGSWanqyLaWI3cwHH37ZxzPll4Mt8SNh2wstV2jv1ysiYqjGYCb6ef6p+ckeAFRGc7gQKW/sZxGJYnMN6p8iEmubNOT9xaQvsXmgK8jeter1+ESqQJzWPs5r5SS80PBfmng0B0SqT0yYZur/nrl/d+u2MSgPBHjPxMWm9SJI8dmU8R8RVEJrdKgfU2DPKEEmqLSbKGgKucJr7wX1S7eh4XJl/b7GWKpN7lIVXszmmSHIRO5oLFuiAX6Epw6mYCNSfjhahw9GA1XVS1C7sYqx/laaVLC8mebm/8CtzY8yWhADNidQMuSGELqiS5+1S86uHGtrn4x/zFAx89GFg7/K4qW2O6FlTe+NGfo/ID9BgHGCygmIRkKby7Ev6NS9R5siZft7T0etKMm0FVVzQ9hkYj2QIFFvvoIhg2C0RzqAkjLkHxIu0BVzwX73msqpdqrGJCQCyqvxxOqXR+OjoTkAM+RLfLdOIgMREpW3/FPSlWtwasw+ZTHebi3rE/attGKJsX5xmb+0tDi79lqD/jJxmupi+B4x0EsJABVLICDHj+0kptU=" # DOCKER_PASS
     - COMMIT=${TRAVIS_COMMIT::8}
 
+script: "mvn cobertura:cobertura"
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   - docker login -u="$DOCKER_USER" -p="$DOCKER_PASSWORD"
