@@ -28,7 +28,7 @@ Este tipo de arquitectuar surgen para dar solucion a problemas inherentes a los 
 - Fácil escalado horizontal.
 - Automatización de despliegues.
 
-![MS-Arc](img/MS-Arc.xml)
+![MS-Arc](img/MS-Arc.png)
 
 ### Spring Cloud Netflix
 
