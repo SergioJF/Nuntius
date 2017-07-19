@@ -28,10 +28,8 @@ Este tipo de arquitectuar surgen para dar solucion a problemas inherentes a los 
 - Fácil escalado horizontal.
 - Automatización de despliegues.
 
-![MS-Arc](https://github.com/SergioJF/Nuntius/blob/master/img/MS-Arc.xml)
 
 ### Spring Cloud Netflix
-
 Aporta una solución para definir una arquitectura de microservicios. Para ello hace uso de los siguientes productos:
 
 
