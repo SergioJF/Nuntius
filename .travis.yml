@@ -56,6 +56,6 @@ after_success:
 
   # EDGE SERVICE
   - export GATEWAY_SERVICE=sergiojf/nuntius-gateway-service
-  - docker build -t GATEWAY_SERVICE:$COMMIT ./gateway-service
-  - docker tag GATEWAY_SERVICE:$COMMIT GATEWAY_SERVICE:$TAG
-  - docker push GATEWAY_SERVICE
+  - docker build -t $GATEWAY_SERVICE:$COMMIT ./gateway-service
+  - docker tag $GATEWAY_SERVICE:$COMMIT $GATEWAY_SERVICE:$TAG
+  - docker push $GATEWAY_SERVICE
