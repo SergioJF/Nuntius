@@ -13,4 +13,8 @@ public class GatewayServiceApplicationTests {
 	public void contextLoads() {
 	}
 
+	@Test
+	public void fire() {
+
+	}
 }
