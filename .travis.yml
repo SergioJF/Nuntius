@@ -30,7 +30,7 @@ after_success:
   - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
   - docker push $CONFIG
 
-    # MONGO DB
+  # MONGO DB
   - export MONGO_DB=sergiojf/nuntius-mongodb
   - docker build -t $MONGO_DB:$COMMIT ./mongodb
   - docker tag $MONGO_DB:$COMMIT $MONGO_DB:$TAG
@@ -55,7 +55,7 @@ after_success:
   - docker push $EUREKA_SERVICE
 
   # EDGE SERVICE
-  - export GATEWAY=sqshq/nuntius-gateway-SERVICE
+  - export GATEWAY=sergiojf/nuntius-gateway
   - docker build -t $GATEWAY:$COMMIT ./gateway-service
   - docker tag $GATEWAY:$COMMIT $GATEWAY:$TAG
   - docker push $GATEWAY
