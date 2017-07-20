@@ -53,3 +53,9 @@ after_success:
   - docker build -t $EUREKA_SERVICE:$COMMIT ./eureka-service
   - docker tag $EUREKA_SERVICE:$COMMIT $EUREKA_SERVICE:$TAG
   - docker push $EUREKA_SERVICE
+
+  # EDGE SERVICE
+  - export GATEWAY=sqshq/nuntius-gateway-SERVICE
+  - docker build -t $GATEWAY:$COMMIT ./gateway-service
+  - docker tag $GATEWAY:$COMMIT $GATEWAY:$TAG
+  - docker push $GATEWAY
