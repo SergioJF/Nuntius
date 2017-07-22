@@ -59,3 +59,9 @@ after_success:
   - docker build -t $GATEWAY_SERVICE:$COMMIT ./gateway-service
   - docker tag $GATEWAY_SERVICE:$COMMIT $GATEWAY_SERVICE:$TAG
   - docker push $GATEWAY_SERVICE
+
+  # EDGE SERVICE
+  - export UI_SERVICE=sergiojf/nuntius-ui-service
+  - docker build -t $UI_SERVICE:$COMMIT ./ui-service
+  - docker tag $UI_SERVICE:$COMMIT $UI_SERVICE:$TAG
+  - docker push $UI_SERVICE
