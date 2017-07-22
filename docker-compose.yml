@@ -28,7 +28,7 @@ services:
     image: sergiojf/nuntius-eureka-service
     restart: always
     depends_on:
-      config:
+      config-service:
         condition: service_healthy
     ports:
       - 8761:8761
@@ -44,7 +44,7 @@ services:
     image: sergiojf/nuntius-gateway-service
     restart: always
     depends_on:
-      config:
+      config-service:
         condition: service_healthy
     ports:
       - 4000:4000
@@ -60,8 +60,8 @@ services:
       image: sergiojf/nuntius-ui-service
       restart: always
       depends_on:
-      config:
-        condition: service_healthy
+        config-service:
+          condition: service_healthy
       ports:
         - 80:8080
       logging:
@@ -78,7 +78,7 @@ services:
     image: sergiojf/nuntius-auth-service
     restart: always
     depends_on:
-      config:
+      config-service:
         condition: service_healthy
     logging:
       options:
@@ -105,7 +105,7 @@ services:
     image: sergiojf/nuntius-account-service
     restart: always
     depends_on:
-      config:
+      config-service:
         condition: service_healthy
     logging:
       options:
