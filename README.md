@@ -31,10 +31,19 @@ Este tipo de arquitectuar surgen para dar solucion a problemas inherentes a los 
 
 
 
-### Spring Cloud Netflix
-Aporta una solución para definir una arquitectura de microservicios. Para ello hace uso de los siguientes productos:
+## Spring Cloud Netflix
 
 ![MS-Arc](img/MS-Arc.png?style=centerme)
+
+La mayoría de los componentes de la arquitectura fueron originalmente desarrollados por Netflix, el conocido site de streaming online, el cual recibe el mayor tráfico de red de bajada de todo EEUU. La arquitectura de Netflix está compuesta por mas de 500 microservicios, y cuenta con más de 50 millones de suscriptores que realizan unas 2.000 millones de peticiones al día.
+
+A continuación se analizarán una selección de los componentes más importantes de dicha arquitectura.
+
+### Eureka
+
+#### ¿Qué es?
+
+Eureka es un servidor para el registro y localización de microserviceios, balance de carga y tolerancia a fallos. La funciión de Eureka es registrar las diferentes instancias de microservicios existentes, su localización, estado, metadatos, ... etc.
 
 
 ## SetUp

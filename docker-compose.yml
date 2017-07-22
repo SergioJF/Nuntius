@@ -1,4 +1,4 @@
-version: '1'
+version: '2.1'
 services:
   rabbitmq:
     image: rabbitmq:3-management
@@ -9,6 +9,7 @@ services:
       options:
         max-size: "10m"
         max-file: "10"
+    
 
   config-service:
     environment:
@@ -19,42 +20,55 @@ services:
       options:
         max-size: "10m"
         max-file: "10"
+    
 
   eureka-service:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     image: sergiojf/nuntius-eureka-service
     restart: always
+    depends_on:
+      config:
+        condition: service_healthy
     ports:
       - 8761:8761
     logging:
       options:
         max-size: "10m"
         max-file: "10"
+    
 
   gateway-service:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     image: sergiojf/nuntius-gateway-service
     restart: always
+    depends_on:
+      config:
+        condition: service_healthy
     ports:
       - 4000:4000
     logging:
       options:
         max-size: "10m"
         max-file: "10"
+    
 
   ui-service:
       environment:
         CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
       image: sergiojf/nuntius-ui-service
       restart: always
+      depends_on:
+      config:
+        condition: service_healthy
       ports:
         - 80:8080
       logging:
         options:
           max-size: "10m"
           max-file: "10"
+      
 
   auth-service:
     environment:
@@ -63,10 +77,14 @@ services:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     image: sergiojf/nuntius-auth-service
     restart: always
+    depends_on:
+      config:
+        condition: service_healthy
     logging:
       options:
         max-size: "10m"
         max-file: "10"
+    
 
   auth-mongodb:
     environment:
@@ -77,6 +95,7 @@ services:
       options:
         max-size: "10m"
         max-file: "10"
+    
 
   account-service:
     environment:
@@ -85,10 +104,14 @@ services:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     image: sergiojf/nuntius-account-service
     restart: always
+    depends_on:
+      config:
+        condition: service_healthy
     logging:
       options:
         max-size: "10m"
         max-file: "10"
+    
 
   account-mongodb:
     environment:
@@ -99,4 +122,5 @@ services:
       options:
         max-size: "10m"
         max-file: "10"
+    
 
