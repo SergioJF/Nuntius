@@ -41,25 +41,12 @@ services:
     image: sergiojf/nuntius-gateway-service
     restart: always
     ports:
-      - 4000:4000
+      - 80:4000
     logging:
       options:
         max-size: "10m"
         max-file: "10"
-    
 
-  ui-service:
-      environment:
-        CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-      image: sergiojf/nuntius-ui-service
-      restart: always
-      ports:
-        - 80:8080
-      logging:
-        options:
-          max-size: "10m"
-          max-file: "10"
-      
 
   auth-service:
     environment:
