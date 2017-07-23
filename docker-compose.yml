@@ -27,9 +27,6 @@ services:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     image: sergiojf/nuntius-eureka-service
     restart: always
-    depends_on:
-      config:
-        condition: service_healthy
     ports:
       - 8761:8761
     logging:
@@ -43,9 +40,6 @@ services:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     image: sergiojf/nuntius-gateway-service
     restart: always
-    depends_on:
-      config:
-        condition: service_healthy
     ports:
       - 4000:4000
     logging:
@@ -59,9 +53,6 @@ services:
         CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
       image: sergiojf/nuntius-ui-service
       restart: always
-      depends_on:
-        config:
-          condition: service_healthy
       ports:
         - 80:8080
       logging:
@@ -77,9 +68,6 @@ services:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     image: sergiojf/nuntius-auth-service
     restart: always
-    depends_on:
-      config:
-        condition: service_healthy
     logging:
       options:
         max-size: "10m"
@@ -104,9 +92,6 @@ services:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     image: sergiojf/nuntius-account-service
     restart: always
-    depends_on:
-      config:
-        condition: service_healthy
     logging:
       options:
         max-size: "10m"
