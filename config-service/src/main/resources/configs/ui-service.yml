@@ -1,7 +1,3 @@
-management:
-  security:
-    enabled: false
-
 server:
   port: 8080
 
@@ -10,12 +6,6 @@ endpoints:
     enabled: true
   restart:
     enabled: true
-
-spring:
-  config:
-    name: ui-service
-  application:
-    name: ui-service
 
 gateway-service:
   ribbon:
