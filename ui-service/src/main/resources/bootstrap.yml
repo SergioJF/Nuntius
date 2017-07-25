@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: ui-service
-  cloud:
-    config:
-      enable: false

@@ -14,7 +14,6 @@
 		<module>account-service</module>
 		<module>eureka-service</module>
 		<module>gateway-service</module>
-		<module>ui-service</module>
 		<!--<module>statistics-service</module>
 		<module>notification-service</module>
 		<module>monitoring-service</module>-->
