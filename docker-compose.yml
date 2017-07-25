@@ -25,7 +25,7 @@ services:
   eureka:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-    image: sergiojf/nuntius-eureka-service
+    image: sergiojf/nuntius-eureka
     restart: always
     ports:
       - 8761:8761

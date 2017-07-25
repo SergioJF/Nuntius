@@ -26,7 +26,7 @@ after_success:
 
   # CONFIG SERVICE
   - export CONFIG=sergiojf/nuntius-config
-  - docker build -t $CONFIG:$COMMIT ./config-service
+  - docker build -t $CONFIG:$COMMIT ./config
   - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
   - docker push $CONFIG
 
@@ -49,10 +49,10 @@ after_success:
   - docker push $ACCOUNT_SERVICE
 
  # EUREKA SERVICE
-  - export EUREKA_SERVICE=sergiojf/nuntius-eureka-service
-  - docker build -t $EUREKA_SERVICE:$COMMIT ./eureka
-  - docker tag $EUREKA_SERVICE:$COMMIT $EUREKA_SERVICE:$TAG
-  - docker push $EUREKA_SERVICE
+  - export EUREKA=sergiojf/nuntius-eureka
+  - docker build -t $EUREKA:$COMMIT ./eureka
+  - docker tag $EUREKA:$COMMIT $EUREKA:$TAG
+  - docker push $EUREKA
 
   # EDGE SERVICE
   - export GATEWAY=sergiojf/nuntius-gateway

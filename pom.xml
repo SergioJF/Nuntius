@@ -9,7 +9,7 @@
 	<name>nuntius</name>
 
 	<modules>
-		<module>config-service</module>
+		<module>config</module>
 		<module>auth-service</module>
 		<module>account-service</module>
 		<module>eureka</module>
