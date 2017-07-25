@@ -59,3 +59,9 @@ after_success:
   - docker build -t $GATEWAY:$COMMIT ./gateway
   - docker tag $GATEWAY:$COMMIT $GATEWAY:$TAG
   - docker push $GATEWAY
+
+  # MONITORING
+  - export MONITORING=sergiojf/nuntius-monitoring
+  - docker build -t $MONITORING:$COMMIT ./monitoring
+  - docker tag $MONITORING:$COMMIT $MONITORING:$TAG
+  - docker push $MONITORING

@@ -16,8 +16,6 @@ services:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     image: sergiojf/nuntius-config
     restart: always
-    ports:
-      - 8888:8888
     logging:
       options:
         max-size: "10m"
@@ -57,8 +55,6 @@ services:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     image: sergiojf/nuntius-auth-service
     restart: always
-    ports:
-      - 5000:5000
     logging:
       options:
         max-size: "10m"
@@ -70,8 +66,6 @@ services:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     image: sergiojf/nuntius-mongodb
     restart: always
-    ports:
-      - 25000:27017
     logging:
       options:
         max-size: "10m"
@@ -85,8 +79,6 @@ services:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     image: sergiojf/nuntius-account-service
     restart: always
-    ports:
-      - 6000:6000
     logging:
       options:
         max-size: "10m"
@@ -98,11 +90,21 @@ services:
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     image: sergiojf/nuntius-mongodb
     restart: always
-    ports:
-      - 26000:27017
     logging:
       options:
         max-size: "10m"
         max-file: "10"
     
 
+  monitoring:
+    environment:
+      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+    image: sergiojf/nuntius-monitoring
+    restart: always
+    ports:
+      - 9000:8080
+      - 8989:8989
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"

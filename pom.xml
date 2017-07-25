@@ -14,9 +14,10 @@
 		<module>account-service</module>
 		<module>eureka-service</module>
 		<module>gateway</module>
+		<module>monitoring</module>
 		<!--<module>statistics-service</module>
 		<module>notification-service</module>
-		<module>monitoring-service</module>-->
+		-->
 	</modules>
 
 </project>
