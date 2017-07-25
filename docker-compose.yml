@@ -37,10 +37,10 @@ services:
         max-file: "10"
     
 
-  gateway-service:
+  gateway:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-    image: sergiojf/nuntius-gateway-service
+    image: sergiojf/nuntius-gateway
     restart: always
     ports:
       - 80:4000

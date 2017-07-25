@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.nuntius</groupId>
-	<artifactId>gateway-service</artifactId>
+	<artifactId>gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>gateway-service</name>
+	<name>gateway</name>
 	<description></description>
 
 	<parent>
@@ -75,7 +75,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration><finalName>gateway-service</finalName></configuration>
+				<configuration><finalName>gateway</finalName></configuration>
 			</plugin>
 		</plugins>
 	</build>
