@@ -22,7 +22,7 @@ services:
         max-file: "10"
     
 
-  eureka-service:
+  eureka:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     image: sergiojf/nuntius-eureka-service

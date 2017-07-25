@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>eureka-service</name>
+	<name>eureka</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -56,7 +56,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<finalName>eureka-service</finalName>
+					<finalName>eureka</finalName>
 				</configuration>
 			</plugin>
 		</plugins>

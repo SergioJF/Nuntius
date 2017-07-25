@@ -50,7 +50,7 @@ after_success:
 
  # EUREKA SERVICE
   - export EUREKA_SERVICE=sergiojf/nuntius-eureka-service
-  - docker build -t $EUREKA_SERVICE:$COMMIT ./eureka-service
+  - docker build -t $EUREKA_SERVICE:$COMMIT ./eureka
   - docker tag $EUREKA_SERVICE:$COMMIT $EUREKA_SERVICE:$TAG
   - docker push $EUREKA_SERVICE
 

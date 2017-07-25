@@ -5,12 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
+@SpringBootApplication
 @EnableDiscoveryClient
 @EnableZuulProxy
-@SpringBootApplication
-public class GatewayServiceApplication {
+public class GatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GatewayServiceApplication.class, args);
+		SpringApplication.run(GatewayApplication.class, args);
 	}
 }
