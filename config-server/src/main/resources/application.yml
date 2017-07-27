@@ -4,8 +4,6 @@ spring:
       server:
         native:
           search-locations: classpath:/config
-  profiles:
-     active: native
 
 server:
   port: 8888
