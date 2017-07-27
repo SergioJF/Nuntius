@@ -22,7 +22,7 @@ services:
         max-file: "10"
     
 
-  eureka-service:
+  registry:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
     image: sergiojf/nuntius-eureka
@@ -107,4 +107,4 @@ services:
     logging:
       options:
         max-size: "10m"
-        max-file: "10"
+        max-file: "10"git staus
