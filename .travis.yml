@@ -24,9 +24,9 @@ after_success:
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
 
-  # CONFIG SERVICE
-  - export CONFIG=sergiojf/nuntius-config
-  - docker build -t $CONFIG:$COMMIT ./config
+  # CONFIG SERVER
+  - export CONFIG=sergiojf/nuntius-config-server
+  - docker build -t $CONFIG:$COMMIT ./config-server
   - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
   - docker push $CONFIG
 
@@ -49,19 +49,13 @@ after_success:
   - docker push $ACCOUNT_SERVICE
 
  # EUREKA SERVICE
-  - export EUREKA=sergiojf/nuntius-eureka
-  - docker build -t $EUREKA:$COMMIT ./registry
+  - export EUREKA=sergiojf/nuntius-eureka-service
+  - docker build -t $EUREKA:$COMMIT ./eureka-service
   - docker tag $EUREKA:$COMMIT $EUREKA:$TAG
   - docker push $EUREKA
 
   # EDGE SERVICE
-  - export GATEWAY=sergiojf/nuntius-gateway
-  - docker build -t $GATEWAY:$COMMIT ./gateway
+  - export GATEWAY=sergiojf/nuntius-edge-service
+  - docker build -t $GATEWAY:$COMMIT ./edge-service
   - docker tag $GATEWAY:$COMMIT $GATEWAY:$TAG
   - docker push $GATEWAY
-
-  # MONITORING
-  - export MONITORING=sergiojf/nuntius-monitoring
-  - docker build -t $MONITORING:$COMMIT ./monitoring
-  - docker tag $MONITORING:$COMMIT $MONITORING:$TAG
-  - docker push $MONITORING

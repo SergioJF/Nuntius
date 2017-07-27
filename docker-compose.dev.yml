@@ -35,5 +35,3 @@ services:
     ports:
       - 26000:27017
 
-  monitoring:
-    build: monitoring
