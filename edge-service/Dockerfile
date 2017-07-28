@@ -4,4 +4,4 @@ MAINTAINER Sergio Jimenez <sergiojimenezfemenia90@gmail.com>
 ADD ./target/edge-service.jar /app/
 CMD ["java", "-Xmx200m", "-jar", "/app/edge-service.jar"]
 
-EXPOSE 4000
+EXPOSE 4444

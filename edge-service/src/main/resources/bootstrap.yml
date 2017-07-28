@@ -8,5 +8,3 @@ spring:
       password: ${CONFIG_SERVICE_PASSWORD}
       username: user
 
-server:
-  port: 4000

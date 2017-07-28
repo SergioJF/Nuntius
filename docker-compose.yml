@@ -41,7 +41,7 @@ services:
     image: sergiojf/nuntius-edge-service
     restart: always
     ports:
-      - 80:4000
+      - 80:4444
     logging:
       options:
         max-size: "10m"
