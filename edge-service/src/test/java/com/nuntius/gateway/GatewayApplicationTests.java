@@ -1,4 +1,4 @@
-package com.piggymetrics.gateway;
+package com.nuntius.gateway;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

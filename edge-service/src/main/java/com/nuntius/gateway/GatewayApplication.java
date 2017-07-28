@@ -1,4 +1,4 @@
-package com.piggymetrics.gateway;
+package com.nuntius.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
