@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.nuntius</groupId>
-	<artifactId>config-server</artifactId>
+	<artifactId>config</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>config-server</name>
+	<name>config</name>
 	<description></description>
 
 	<parent>
@@ -62,7 +62,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration><finalName>config-server</finalName></configuration>
+				<configuration><finalName>config</finalName></configuration>
 			</plugin>
 		</plugins>
 	</build>
