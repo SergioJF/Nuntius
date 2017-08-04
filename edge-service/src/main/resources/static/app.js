@@ -3,11 +3,12 @@ angular.module('nuntius', [
     'nuntius.login',
     'nuntius.signup',
     'nuntius.account',
+    'nuntius.home',
     'ngRoute',
     'LocalStorageModule'])
 .config(function nuntiusConfig($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/', {
+        .when('/home', {
             controller: 'HomeCtrl',
             templateUrl: 'home/homeView.html',
             controllerAs: 'vm'

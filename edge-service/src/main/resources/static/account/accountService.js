@@ -2,7 +2,7 @@ angular.module('nuntius.account', [])
 .factory('AccountService', function AccountService() {
     var service = {};
 
-    service.requestOauthToken = initAccount;
+    service.initAccount = initAccount;
     return service;
 
     function initAccount(account) {
@@ -14,7 +14,7 @@ angular.module('nuntius.account', [])
         var seen = new Date(lastSeen);
 
         this.login = username;
-        this.lastSeen = (seen.getMonth() + 1) + "/" + seen.getDate()  + "/" + seen.getFullYear();;
+        this.lastSeen = (seen.getDate()  + "/" + seen.getMonth() + 1)  + "/" + seen.getFullYear();;
         this.mail = mail;
         this.icon = icon;
 

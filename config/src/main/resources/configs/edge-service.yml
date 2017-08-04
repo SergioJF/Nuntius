@@ -33,3 +33,9 @@ zuul:
         stripPrefix: false
         sensitiveHeaders:
 
+    messenger-service:
+            path: /conversations/**
+            serviceId: messenger-service
+            stripPrefix: false
+            sensitiveHeaders:
+
