@@ -68,7 +68,7 @@ after_success:
 
   # WEB SERVICE
   - export WEB=sergiojf/nuntius-web-service
-  - docker build -t $CLIENT:$COMMIT ./web-service
+  - docker build -t $WEB:$COMMIT ./web-service
   - docker tag $WEB:$COMMIT $WEB:$TAG
   - docker push $WEB
 
