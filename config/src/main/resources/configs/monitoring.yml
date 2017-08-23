@@ -1,0 +1,20 @@
+server:
+  port: 9900
+spring:
+  application:
+    name: hystrixdashboard
+  config:
+    name: hystrixdashboard
+security:
+  ignored: true
+turbine:
+  aggregator:
+    clusterNameExpression: 'default'
+  appConfig: comment-service,client-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-service:8761/eureka/
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}:${server.port}

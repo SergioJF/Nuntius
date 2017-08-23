@@ -60,7 +60,7 @@ services:
           max-file: "10"
 
   client-service:
-        iage: sergiojf/nuntius-client-service
+        image: sergiojf/nuntius-client-service
         restart: always
         ports:
           - 9100:9100
@@ -131,7 +131,7 @@ services:
     image: sergiojf/nuntius-monitoring
     restart: always
     ports:
-      - 9000:8080
+      - 9900:9900
       - 8989:8989
     logging:
       options:
