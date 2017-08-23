@@ -14,6 +14,17 @@ services:
 
   edge-service:
     build: edge-service
+    ports:
+      - 4444:4444
+
+  web-service:
+    build: web-service
+
+  client-service:
+      build: client-service
+
+  comment-service:
+      build: comment-service
 
   auth-service:
     build: auth-service
@@ -34,16 +45,6 @@ services:
     build: mongodb
     ports:
       - 26000:27017
-
-  messenger-service:
-    build: messenger-service
-    ports:
-      - 7000:7000
-
-  messenger-mongodb:
-    build: mongodb
-    ports:
-      - 27000:27017
 
   monitoring:
     build: monitoring

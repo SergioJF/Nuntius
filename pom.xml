@@ -15,6 +15,9 @@
 		<module>eureka-service</module>
 		<module>edge-service</module>
 		<module>monitoring</module>
+		<module>web-service</module>
+		<module>client-service</module>
+		<module>comment-service</module>
 	</modules>
 
 </project>
