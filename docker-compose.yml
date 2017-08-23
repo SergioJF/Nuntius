@@ -131,8 +131,7 @@ services:
     image: sergiojf/nuntius-monitoring
     restart: always
     ports:
-      - 9900:9900
-      - 8989:8989
+      - 9900:8080
     logging:
       options:
         max-size: "10m"

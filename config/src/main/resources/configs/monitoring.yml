@@ -1,10 +1,9 @@
-server:
-  port: 9900
+
 spring:
   application:
-    name: hystrixdashboard
+    name: monitoring
   config:
-    name: hystrixdashboard
+    name: monitoring
 security:
   ignored: true
 turbine:
