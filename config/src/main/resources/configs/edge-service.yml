@@ -34,12 +34,12 @@ zuul:
         sensitiveHeaders:
 
     client-service:
-      path: /clients/**
+      path: /api/api-clients/**
       serviceId: client-service
       stripPrefix: false
 
     comment-service:
-      path: /comments/**
-      serviceId: comments-service
+      path: /api/api-comments/**
+      serviceId: comment-service
       stripPrefix: false
 

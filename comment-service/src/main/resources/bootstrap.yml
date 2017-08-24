@@ -1,4 +1,4 @@
 spring:
   application:
-    name: comment-service-mongodb
+    name: comment-service
   

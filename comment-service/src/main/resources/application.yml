@@ -1,6 +1,5 @@
 server:
   port: 9000
-  context-path: /comments
 endpoints:
   shutdown:
     enabled: true
