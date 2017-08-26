@@ -22,23 +22,11 @@ public class MicroserviceCommentsHystrixClient {
 		return client.getClients();
 	};
 	
-	@HystrixCommand(fallbackMethod="getCommentsFallback")
-	public PagedResources<Comment> getComments() {
-		return client.getComments();
-	};
-	
 	public PagedResources<Client> getUsersFallback() {
 		List<Client> content = new ArrayList<>();
 		PageMetadata metadata = null;
 		Link links = null;
 		return new PagedResources<Client>(content,metadata ,links );
 	};
-	
-	public PagedResources<Comment> getCommentsFallback() {
-		List<Comment> content = new ArrayList<>();
-		PageMetadata metadata = null;
-		Link links = null;
-		return new PagedResources<Comment>(content,metadata ,links );
-	};
-		
+
 }

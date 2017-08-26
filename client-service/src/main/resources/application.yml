@@ -1,5 +1,6 @@
 server:
   port: 9100
+  context-path: /clients
 endpoints:
   shutdown:
     enabled: true

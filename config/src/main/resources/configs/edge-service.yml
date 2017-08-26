@@ -14,6 +14,12 @@ ribbon:
   ReadTimeout: 20000
   ConnectTimeout: 20000
 
+spring:
+  config:
+    name: edge-service
+  application:
+    name: edge-service
+
 zuul:
   ignoredServices: '*'
   host:
@@ -34,12 +40,8 @@ zuul:
         sensitiveHeaders:
 
     client-service:
-      path: /api/api-clients/**
+      path: /clients/**
       serviceId: client-service
       stripPrefix: false
 
-    comment-service:
-      path: /api/api-comments/**
-      serviceId: comment-service
-      stripPrefix: false
 

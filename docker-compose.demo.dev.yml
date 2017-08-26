@@ -23,8 +23,5 @@ services:
   client-service:
       build: client-service
 
-  comment-service:
-      build: comment-service
-
   monitoring:
     build: monitoring
