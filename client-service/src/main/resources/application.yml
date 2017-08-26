@@ -1,22 +1,18 @@
 server:
   port: 9100
   context-path: /clients
+
 endpoints:
   shutdown:
     enabled: true
   restart:
     enabled: true
+
 spring:
   config:
     name: client-service
   application:
     name: client-service
-  cloud:
-    config:
-      enabled: true
-      uri: http://localhost:8888
-      failFast: true
-
   datasource:
     driverClassName: org.h2.Driver
     url: jdbc:h2:mem:test;MODE=Mysql
