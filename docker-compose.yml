@@ -59,15 +59,15 @@ services:
           max-size: "10m"
           max-file: "10"
 
-  client-service:
-        image: sergiojf/nuntius-client-service
-        restart: always
-        ports:
-          - 9100:9100
-        logging:
-          options:
-            max-size: "10m"
-            max-file: "10"
+  comment-service:
+      image: sergiojf/nuntius-comment-service
+      restart: always
+      ports:
+        - 9000:9000
+      logging:
+        options:
+          max-size: "10m"
+          max-file: "10"
 
   auth-service:
     environment:

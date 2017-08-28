@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient("edge-service")
 public interface MicroservicesClient {
 
-	@RequestMapping(method = RequestMethod.GET, value = "/clients")
-	public PagedResources<Client> getClients();
+	@RequestMapping(method = RequestMethod.GET, value = "/api-comments/comments/")
+	public PagedResources<Comment> getComments();
 	
 }

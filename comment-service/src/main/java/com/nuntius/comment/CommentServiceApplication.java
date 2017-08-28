@@ -1,4 +1,4 @@
-package com.nuntius.client;
+package com.nuntius.comment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -15,22 +15,19 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableHystrix
-public class ClientServiceApplication {
+public class CommentServiceApplication {
 
 	
 	
 	public static void main(String[] args) {
 
-		final ConfigurableApplicationContext context = SpringApplication.run(ClientServiceApplication.class, args);
-		final ClientRepository repo = context.getBean(ClientRepository.class);
+		final ConfigurableApplicationContext context = SpringApplication.run(CommentServiceApplication.class, args);
+		final CommentRepository repo = context.getBean(CommentRepository.class);
 		for(int i = 0 ; i < 100 ; i++){
-			Client client = new Client();
-			client.setEmail("email_"+i+"@dominio.com");
-			client.setName("Nombre "+i);
-			client.setLastName("Apellido "+i);
+			Comment comment = new Comment();
+			comment.setText("Esto es un comentario y su ID es: " + comment.getId());
 
-
-			repo.save(client);
+			repo.save(comment);
 		}
 		
 		

@@ -20,8 +20,8 @@ services:
   web-service:
     build: web-service
 
-  client-service:
-      build: client-service
+  comment-service:
+      build: comment-service
 
   auth-service:
     build: auth-service

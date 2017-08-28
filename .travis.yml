@@ -72,8 +72,8 @@ after_success:
   - docker tag $WEB:$COMMIT $WEB:$TAG
   - docker push $WEB
 
-  # CLIENT SERVICE
-  - export CLIENT=sergiojf/nuntius-client-service
-  - docker build -t $CLIENT:$COMMIT ./client-service
-  - docker tag $CLIENT:$COMMIT $CLIENT:$TAG
-  - docker push $CLIENT
+  # COMMENT SERVICE
+  - export COMMENT=sergiojf/nuntius-comment-service
+  - docker build -t $COMMENT:$COMMIT ./comment-service
+  - docker tag $COMMENT:$COMMIT $COMMENT:$TAG
+  - docker push $COMMENT

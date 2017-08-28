@@ -17,16 +17,16 @@ public class MicroserviceCommentsHystrixClient {
 	private MicroservicesClient client;
 	
 	
-	@HystrixCommand(fallbackMethod="getUsersFallback")
-	public PagedResources<Client> getClients() {
-		return client.getClients();
+	@HystrixCommand(fallbackMethod="getCommentsFallback")
+	public PagedResources<Comment> getComments() {
+		return client.getComments();
 	};
 	
-	public PagedResources<Client> getUsersFallback() {
-		List<Client> content = new ArrayList<>();
+	public PagedResources<Comment> getCommentsFallback() {
+		List<Comment> content = new ArrayList<>();
 		PageMetadata metadata = null;
 		Link links = null;
-		return new PagedResources<Client>(content,metadata ,links );
+		return new PagedResources<Comment>(content,metadata ,links );
 	};
 
 }

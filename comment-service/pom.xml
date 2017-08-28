@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.nuntius</groupId>
-	<artifactId>client-service</artifactId>
+	<artifactId>comment-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>client-service</name>
+	<name>comment-service</name>
 
 
 	<parent>
@@ -114,7 +114,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<finalName>client-service</finalName>
+					<finalName>comment-service</finalName>
 				</configuration>
 			</plugin>
 			<plugin>

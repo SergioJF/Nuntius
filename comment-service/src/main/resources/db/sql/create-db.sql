@@ -1,0 +1,4 @@
+CREATE TABLE comment (
+  id INTEGER PRIMARY KEY,
+  text VARCHAR(30)
+);

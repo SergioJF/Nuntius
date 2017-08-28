@@ -8,4 +8,4 @@ security:
 turbine:
   aggregator:
     clusterNameExpression: 'default'
-  appConfig: client-service
+  appConfig: comment-service

@@ -10,17 +10,17 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
-public class ClientController {
+public class CommentController {
 
 	@Autowired
-	private MicroserviceCommentsHystrixClient client;
+	private MicroserviceCommentsHystrixClient comment;
 	
 	@Autowired
 	private ObjectMapper mapper;
 
-	@RequestMapping("/clients")
+	@RequestMapping("/comments")
 	public ResponseEntity<String> home() throws JsonProcessingException {
-		return new ResponseEntity<String>(mapper.writeValueAsString(client.getClients()), HttpStatus.ACCEPTED);
+		return new ResponseEntity<String>(mapper.writeValueAsString(comment.getComments()), HttpStatus.ACCEPTED);
 	}
 	
 }
